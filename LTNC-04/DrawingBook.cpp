@@ -15,5 +15,13 @@ string rtrim(const string &);
  */
 
 int pageCount(int n, int p) {
+  if (p < 1 || n <= 0) {
+        return 0; 
+    }
 
+    // Calculate from the beginning and from the end
+    int fromBeg = p / 2;
+    int fromEnd = (n / 2) - (p / 2);
+
+    return fromBeg < fromEnd ? fromBeg : fromEnd;
 }
